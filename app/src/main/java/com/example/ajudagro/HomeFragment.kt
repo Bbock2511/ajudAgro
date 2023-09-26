@@ -23,7 +23,11 @@ class HomeFragment : Fragment() {
         binding.buttonCadastrarColeta.setOnClickListener {
             findNavController().navigate(R.id.action_homeFragment_to_cadastrarColetaPrimeiraParteFragment)
         }
-        
+
+        binding.buttonEditarColeta.setOnClickListener {
+            findNavController().navigate(R.id.action_homeFragment_to_selecionarAnaliseFragment)
+        }
+
 
         return binding.root
     }

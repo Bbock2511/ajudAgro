@@ -49,6 +49,9 @@
         <action
             android:id="@+id/action_selecionarAnaliseFragment_to_editarColetaFragment"
             app:destination="@id/editarColetaFragment" />
+        <action
+            android:id="@+id/action_selecionarAnaliseFragment_to_analisarColetaFragment"
+            app:destination="@id/analisarColetaFragment" />
     </fragment>
     <fragment
         android:id="@+id/editarColetaFragment"
@@ -69,6 +72,24 @@
         tools:layout="@layout/fragment_editar_coleta_segunda_parte" >
         <action
             android:id="@+id/action_editarColetaSegundaParteFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/analisarColetaFragment"
+        android:name="com.example.ajudagro.AnalisarColetaFragment"
+        android:label="fragment_analisar_coleta"
+        tools:layout="@layout/fragment_analisar_coleta" >
+        <action
+            android:id="@+id/action_analisarColetaFragment_to_analisarColetaSegundaParteFragment"
+            app:destination="@id/analisarColetaSegundaParteFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/analisarColetaSegundaParteFragment"
+        android:name="com.example.ajudagro.AnalisarColetaSegundaParteFragment"
+        android:label="fragment_analisar_coleta_segunda_parte"
+        tools:layout="@layout/fragment_analisar_coleta_segunda_parte" >
+        <action
+            android:id="@+id/action_analisarColetaSegundaParteFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
     </fragment>
 </navigation>
