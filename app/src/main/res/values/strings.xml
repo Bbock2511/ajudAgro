@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">ajudAgro</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="logo_description">Logo</string>
+    <string name="cadastrar_coleta_text_button">Cadastrar\ncoleta</string>
+    <string name="editar_coleta_text_button">Editar\nColeta</string>
+    <string name="analisar_coleta_text_button">Analisar\nColeta</string>
+    <string name="gerar_relatorios_text_button">Gerar\nRelatórios</string>
+</resources>

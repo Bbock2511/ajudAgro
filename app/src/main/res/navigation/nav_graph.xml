@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.ajudagro.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_cadastrarColetaPrimeiraParteFragment"
+            app:destination="@id/cadastrarColetaPrimeiraParteFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_selecionarAnaliseFragment"
+            app:destination="@id/selecionarAnaliseFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/cadastrarColetaPrimeiraParteFragment"
+        android:name="com.example.ajudagro.CadastrarColetaPrimeiraParteFragment"
+        android:label="fragment_cadastrar_coleta_primeira_parte"
+        tools:layout="@layout/fragment_cadastrar_coleta_primeira_parte" >
+        <action
+            android:id="@+id/action_cadastrarColetaPrimeiraParteFragment_to_cadastrarColetaSegundaParteFragment"
+            app:destination="@id/cadastrarColetaSegundaParteFragment" />
+        <action
+            android:id="@+id/action_cadastrarColetaPrimeiraParteFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/cadastrarColetaSegundaParteFragment"
+        android:name="com.example.ajudagro.CadastrarColetaSegundaParteFragment"
+        android:label="fragment_cadastrar_coleta_segunda_parte"
+        tools:layout="@layout/fragment_cadastrar_coleta_segunda_parte" >
+        <action
+            android:id="@+id/action_cadastrarColetaSegundaParteFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/selecionarAnaliseFragment"
+        android:name="com.example.ajudagro.SelecionarAnaliseFragment"
+        android:label="fragment_selecionar_analise"
+        tools:layout="@layout/fragment_selecionar_analise" >
+        <action
+            android:id="@+id/action_selecionarAnaliseFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_selecionarAnaliseFragment_to_editarColetaFragment"
+            app:destination="@id/editarColetaFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/editarColetaFragment"
+        android:name="com.example.ajudagro.editarColetaFragment"
+        android:label="fragment_editar_coleta"
+        tools:layout="@layout/fragment_editar_coleta" >
+        <action
+            android:id="@+id/action_editarColetaFragment_to_selecionarAnaliseFragment"
+            app:destination="@id/selecionarAnaliseFragment" />
+        <action
+            android:id="@+id/action_editarColetaFragment_to_editarColetaSegundaParteFragment"
+            app:destination="@id/editarColetaSegundaParteFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/editarColetaSegundaParteFragment"
+        android:name="com.example.ajudagro.editarColetaSegundaParteFragment"
+        android:label="fragment_editar_coleta_segunda_parte"
+        tools:layout="@layout/fragment_editar_coleta_segunda_parte" >
+        <action
+            android:id="@+id/action_editarColetaSegundaParteFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+</navigation>
