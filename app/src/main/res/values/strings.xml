@@ -7,4 +7,6 @@
     <string name="editar_coleta_text_button">Editar\nColeta</string>
     <string name="analisar_coleta_text_button">Analisar\nColeta</string>
     <string name="gerar_relatorios_text_button">Gerar\nRelatórios</string>
+    <string name="ajuda">AJUDA</string>
+    <string name="sobre">SOBRE</string>
 </resources>

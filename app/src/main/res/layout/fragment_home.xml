@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".HomeFragment">
+    tools:context=".HomeFragment"
+    android:elevation="8dp">
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/appCompatImageView"
@@ -16,9 +17,9 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.212"
+        app:layout_constraintVertical_bias="0.131"
         tools:ignore="ImageContrastCheck" />
-    
+
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/buttonCadastrarColeta"
         android:layout_width="144dp"
@@ -28,10 +29,10 @@
         android:text="@string/cadastrar_coleta_text_button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.029"
+        app:layout_constraintHorizontal_bias="0.03"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/appCompatImageView"
-        app:layout_constraintVertical_bias="0.254" />
+        app:layout_constraintVertical_bias="0.15" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/buttonEditarColeta"
@@ -42,10 +43,10 @@
         android:text="@string/editar_coleta_text_button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.688"
+        app:layout_constraintHorizontal_bias="0.704"
         app:layout_constraintStart_toEndOf="@+id/buttonCadastrarColeta"
         app:layout_constraintTop_toBottomOf="@+id/appCompatImageView"
-        app:layout_constraintVertical_bias="0.255" />
+        app:layout_constraintVertical_bias="0.148" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/buttonAnalisarColeta"
@@ -72,6 +73,61 @@
         app:layout_constraintStart_toEndOf="@+id/buttonAnalisarColeta"
         app:layout_constraintTop_toBottomOf="@+id/buttonEditarColeta"
         app:layout_constraintVertical_bias="0.247" />
+
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:elevation="10dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appCompatImageView"
+        app:layout_constraintVertical_bias="1.0">
+
+        <FrameLayout
+            android:id="@+id/bottomSheet"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:background="@drawable/sheet_background"
+            app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/baseline_minimize"
+                android:layout_gravity="center|top"/>
+
+            <Button
+                android:id="@+id/buttonAjuda"
+                android:layout_width="100dp"
+                android:layout_height="110dp"
+                android:layout_marginStart="80dp"
+                android:textColor="@color/black"
+                android:layout_marginTop="50dp"
+                android:backgroundTint="@color/transparent"
+                android:drawableTop="@drawable/baseline_person"
+                android:text="@string/ajuda"
+                android:textSize="16sp"
+                />
+
+            <Button
+                android:id="@+id/buttonSobre"
+                android:layout_width="100dp"
+                android:layout_height="110dp"
+                android:layout_marginStart="240dp"
+                android:layout_marginTop="50dp"
+                android:textSize="16sp"
+                android:textColor="@color/black"
+                android:backgroundTint="@color/transparent"
+                android:drawableTop="@drawable/baseline_info"
+                android:text="@string/sobre" />
+        </FrameLayout>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

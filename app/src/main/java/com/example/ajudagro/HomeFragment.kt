@@ -7,18 +7,24 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.example.ajudagro.databinding.FragmentHomeBinding
+import com.google.android.material.bottomsheet.BottomSheetBehavior
 
 class HomeFragment : Fragment() {
 
     private var _binding:FragmentHomeBinding? = null
     private val binding get() = _binding!!
 
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
+
+        val bottomSheetBehavior = binding.bottomSheet
+        BottomSheetBehavior.from(bottomSheetBehavior).apply {
+            peekHeight = 100
+            this.state = BottomSheetBehavior.STATE_EXPANDED
+        }
 
         binding.buttonCadastrarColeta.setOnClickListener {
             findNavController().navigate(R.id.action_homeFragment_to_cadastrarColetaPrimeiraParteFragment)
