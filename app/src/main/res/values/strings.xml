@@ -9,4 +9,22 @@
     <string name="gerar_relatorios_text_button">Gerar\nRelatórios</string>
     <string name="ajuda">AJUDA</string>
     <string name="sobre">SOBRE</string>
+    <string name="nomeDaCol">Nome da coleta</string>
+    <string name="exemploColeta">Ex: Coleta 1</string>
+    <string name="coordenadas">Coordenadas GPS</string>
+    <string name="coordenadasHint">Ex: -14.604847  -49.207169</string>
+    <string name="dimensoesArea">Dimensões da área</string>
+    <string name="areaHint">Ex: 50m²</string>
+    <string name="maquinarioHint">Ex: CASE IH 2388</string>
+    <string name="maquinario">Maquinário</string>
+    <string name="dataAnalise">Data de análise</string>
+    <string name="dataAnaliseHint">Ex: 28/09/2023</string>
+    <string name="cidade">Cidade</string>
+    <string name="cidadeHint">Ex: Bento Gonçalves</string>
+    <string name="estado">Estado</string>
+    <string name="estadoHint">Ex: RS</string>
+    <string name="textButtonAvancar">Avançar</string>
+    <string name="diametroPeneira">Diâmetro da peneira(cm)</string>
+    <string name="exemplosMedidasPeneiras">0.00</string>
+    <string name="areaPeneira">Área da uma peneira(m²)</string>
 </resources>

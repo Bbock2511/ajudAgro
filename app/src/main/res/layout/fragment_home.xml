@@ -23,7 +23,7 @@
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/buttonCadastrarColeta"
         android:layout_width="144dp"
-        android:layout_height="124dp"
+        android:layout_height="130dp"
         android:layout_marginStart="36dp"
         android:drawableTop="@drawable/nova_coleta_vector"
         android:text="@string/cadastrar_coleta_text_button"
@@ -37,7 +37,7 @@
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/buttonEditarColeta"
         android:layout_width="144dp"
-        android:layout_height="124dp"
+        android:layout_height="130dp"
         android:layout_marginEnd="36dp"
         android:drawableTop="@drawable/editar_coleta_vector"
         android:text="@string/editar_coleta_text_button"
@@ -51,7 +51,7 @@
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/buttonAnalisarColeta"
         android:layout_width="144dp"
-        android:layout_height="124dp"
+        android:layout_height="130dp"
         android:drawableTop="@drawable/analisar_coleta_vector"
         android:text="@string/analisar_coleta_text_button"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -64,7 +64,7 @@
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/buttonGerarRelatorios"
         android:layout_width="144dp"
-        android:layout_height="124dp"
+        android:layout_height="130dp"
         android:drawableTop="@drawable/gerar_relatorio_vector"
         android:text="@string/gerar_relatorios_text_button"
         app:layout_constraintBottom_toBottomOf="parent"

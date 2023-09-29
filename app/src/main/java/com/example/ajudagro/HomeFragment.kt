@@ -23,7 +23,7 @@ class HomeFragment : Fragment() {
         val bottomSheetBehavior = binding.bottomSheet
         BottomSheetBehavior.from(bottomSheetBehavior).apply {
             peekHeight = 100
-            this.state = BottomSheetBehavior.STATE_EXPANDED
+            this.state = BottomSheetBehavior.STATE_COLLAPSED
         }
 
         binding.buttonCadastrarColeta.setOnClickListener {
