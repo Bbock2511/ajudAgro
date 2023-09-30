@@ -58,7 +58,7 @@
     </fragment>
     <fragment
         android:id="@+id/editarColetaFragment"
-        android:name="com.example.ajudagro.editarColetaFragment"
+        android:name="com.example.ajudagro.EditarColetaFragment"
         android:label="fragment_editar_coleta"
         tools:layout="@layout/fragment_editar_coleta" >
         <action
@@ -67,15 +67,21 @@
         <action
             android:id="@+id/action_editarColetaFragment_to_editarColetaSegundaParteFragment"
             app:destination="@id/editarColetaSegundaParteFragment" />
+        <argument
+            android:name="analise"
+            app:argType="com.example.ajudagro.database.models.Analise" />
     </fragment>
     <fragment
         android:id="@+id/editarColetaSegundaParteFragment"
-        android:name="com.example.ajudagro.editarColetaSegundaParteFragment"
+        android:name="com.example.ajudagro.EditarColetaSegundaParteFragment"
         android:label="fragment_editar_coleta_segunda_parte"
         tools:layout="@layout/fragment_editar_coleta_segunda_parte" >
         <action
             android:id="@+id/action_editarColetaSegundaParteFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
+        <argument
+            android:name="analiseTodosDados"
+            app:argType="com.example.ajudagro.database.models.Analise" />
     </fragment>
     <fragment
         android:id="@+id/analisarColetaFragment"

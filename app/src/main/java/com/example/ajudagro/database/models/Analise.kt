@@ -7,6 +7,7 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 import kotlinx.parcelize.Parcelize
 
+@Parcelize
 @Entity("analises")
 data class Analise(
     @PrimaryKey(autoGenerate = true)
@@ -35,7 +36,7 @@ data class Analise(
     val embaixoPeneiraTres: Float,
     @ColumnInfo("Embaixo Peneira 4")
     val embaixoPeneiraQuatro: Float,
-)
+): Parcelable
 
 @Parcelize
 data class AnaliseGeral(

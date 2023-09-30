@@ -34,4 +34,6 @@
     <string name="sessaoPerdasDeGraosEmbaixo">Perda de grãos <b>Embaixo</b> da Peneira (gramas)</string>
     <string name="salvarNoDB">Salvar</string>
     <string name="areaTodasPeneiras">Área das quatro peneiras (m²)</string>
+    <string name="atualizarNoDB">Atualizar</string>
+    <string name="deletar_analise_context">Deletar análise</string>
 </resources>

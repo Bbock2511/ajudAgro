@@ -28,7 +28,6 @@ class HomeFragment : Fragment() {
         }
 
         binding.buttonCadastrarColeta.setOnClickListener {
-            Log.e("Home to Cadastrar", "Ocorreu um erro aqui")
             findNavController().navigate(R.id.action_homeFragment_to_cadastrarColetaPrimeiraParteFragment)
         }
 

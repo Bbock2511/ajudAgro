@@ -31,7 +31,7 @@ class CadastrarColetaPrimeiraParteFragment : Fragment() {
         return binding.root
     }
 
-    private fun enviarDadosParaSegundaParte(){
+     private fun enviarDadosParaSegundaParte(){
         val nome = binding.nomeDaColetaInput.text.toString()
         val coordenadas = binding.coordenadasInput.text.toString()
         val dimensoesArea = binding.areaInput.text.toString()
