@@ -5,55 +5,104 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
+import com.example.ajudagro.database.models.Analise
+import com.example.ajudagro.database.viewmodel.AnaliseViewModel
+import com.example.ajudagro.databinding.FragmentCadastrarColetaSegundaParteBinding
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [CadastrarColetaSegundaParteFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class CadastrarColetaSegundaParteFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+    private val args by navArgs<CadastrarColetaSegundaParteFragmentArgs>()
+
+    private var _binding: FragmentCadastrarColetaSegundaParteBinding? = null
+    private val binding get() = _binding!!
+
+    private lateinit var mAnaliseViewModel: AnaliseViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_cadastrar_coleta_segunda_parte, container, false)
+    ): View {
+        _binding = FragmentCadastrarColetaSegundaParteBinding.inflate(layoutInflater, container, false)
+
+        mAnaliseViewModel = ViewModelProvider(this)[AnaliseViewModel::class.java]
+
+        binding.buttonSalvar.setOnClickListener {
+            inserirAnaliseBancoDeDados()
+        }
+
+        return binding.root
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment CadastrarColetaSegundaParteFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            CadastrarColetaSegundaParteFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+    private fun inserirAnaliseBancoDeDados() {
+        val diametroPeneira = binding.diametroPeneiraInput.text.toString()
+        val areaPeneira = binding.areaPeneiraInput.text.toString()
+        val areaTodasPeneiras = binding.areaTodasPeneiraInput.text.toString()
+        val perdaPeneiraUm = binding.peneiraUmInput.text.toString()
+        val perdaPeneiraDois = binding.peneiraDoisInput.text.toString()
+        val perdaPeneiraTres = binding.peneiraTresInput.text.toString()
+        val perdaPeneiraQuatro = binding.peneiraQuatroInput.text.toString()
+        val perdaEmbaixoPeneiraUm = binding.embaixoPeneiraUmInput.text.toString()
+        val perdaEmbaixoPeneiraDois = binding.embaixoPeneiraDoisInput.text.toString()
+        val perdaEmbaixoPeneiraTres = binding.embaixoPeneiraTresInput.text.toString()
+        val perdaEmbaixoPeneiraQuatro = binding.embaixoPeneiraQuatroInput.text.toString()
+
+        if (verificacaoDeEntrada(
+                diametroPeneira,
+                areaPeneira,
+                areaTodasPeneiras,
+                perdaPeneiraUm,
+                perdaPeneiraDois,
+                perdaPeneiraTres,
+                perdaPeneiraQuatro,
+                perdaEmbaixoPeneiraUm,
+                perdaEmbaixoPeneiraDois,
+                perdaEmbaixoPeneiraTres,
+                perdaEmbaixoPeneiraQuatro
+            )) {
+            val analise = Analise(0, args.analiseGeral, diametroPeneira.toFloat(), areaPeneira.toFloat(),
+                areaTodasPeneiras.toFloat(), perdaPeneiraUm.toFloat(), perdaPeneiraDois.toFloat(), perdaPeneiraTres.toFloat(),
+                perdaPeneiraQuatro.toFloat(), perdaEmbaixoPeneiraUm.toFloat(), perdaEmbaixoPeneiraDois.toFloat(),
+                perdaEmbaixoPeneiraTres.toFloat(), perdaEmbaixoPeneiraQuatro.toFloat()
+            )
+
+            mAnaliseViewModel.inserirAnalise(analise)
+            Toast.makeText(context, "Análise cadastrada!", Toast.LENGTH_LONG).show()
+            findNavController().navigate(R.id.action_cadastrarColetaSegundaParteFragment_to_homeFragment)
+        } else {
+            Toast.makeText(context, "Preencha todos os campos!", Toast.LENGTH_LONG).show()
+        }
     }
+
+    private fun verificacaoDeEntrada(
+        diametroPeneira: String,
+        areaPeneira: String,
+        areaTodasPeneiras: String,
+        perdaPeneiraUm: String,
+        perdaPeneiraDois: String,
+        perdaPeneiraTres: String,
+        perdaPeneiraQuatro: String,
+        perdaEmbaixoPeneiraUm: String,
+        perdaEmbaixoPeneiraDois: String,
+        perdaEmbaixoPeneiraTres: String,
+        perdaEmbaixoPeneiraQuatro: String
+    ): Boolean {
+        return (
+                diametroPeneira.isNotEmpty() ||
+                        areaPeneira.isNotEmpty() ||
+                        areaTodasPeneiras.isNotEmpty() ||
+                        perdaPeneiraUm.isNotEmpty() ||
+                        perdaPeneiraDois.isNotEmpty() ||
+                        perdaPeneiraTres.isNotEmpty() ||
+                        perdaPeneiraQuatro.isNotEmpty() ||
+                        perdaEmbaixoPeneiraUm.isNotEmpty() ||
+                        perdaEmbaixoPeneiraDois.isNotEmpty() ||
+                        perdaEmbaixoPeneiraTres.isNotEmpty() ||
+                        perdaEmbaixoPeneiraQuatro.isNotEmpty()
+                )
+    }
+
 }

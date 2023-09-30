@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">ajudAgro</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="logo_description">Logo</string>
     <string name="cadastrar_coleta_text_button">Cadastrar\ncoleta</string>
@@ -13,8 +12,8 @@
     <string name="exemploColeta">Ex: Coleta 1</string>
     <string name="coordenadas">Coordenadas GPS</string>
     <string name="coordenadasHint">Ex: -14.604847  -49.207169</string>
-    <string name="dimensoesArea">Dimensões da área</string>
-    <string name="areaHint">Ex: 50m²</string>
+    <string name="dimensoesArea">Dimensões da área (m²)</string>
+    <string name="areaHint">Ex: 50</string>
     <string name="maquinarioHint">Ex: CASE IH 2388</string>
     <string name="maquinario">Maquinário</string>
     <string name="dataAnalise">Data de análise</string>
@@ -24,7 +23,15 @@
     <string name="estado">Estado</string>
     <string name="estadoHint">Ex: RS</string>
     <string name="textButtonAvancar">Avançar</string>
-    <string name="diametroPeneira">Diâmetro da peneira(cm)</string>
+    <string name="diametroPeneira">Diâmetro da peneira (cm)</string>
     <string name="exemplosMedidasPeneiras">0.00</string>
-    <string name="areaPeneira">Área da uma peneira(m²)</string>
+    <string name="areaPeneira">Área da uma peneira (m²)</string>
+    <string name="sessaoPerdasDeGraos">Perdas de Grãos em <b>Cima</b> da Peneira (gramas)</string>
+    <string name="peneira1">Peneira 1</string>
+    <string name="peneira2">Peneira 2</string>
+    <string name="peneira3">Peneira 3</string>
+    <string name="peneira4">Peneira 4</string>
+    <string name="sessaoPerdasDeGraosEmbaixo">Perda de grãos <b>Embaixo</b> da Peneira (gramas)</string>
+    <string name="salvarNoDB">Salvar</string>
+    <string name="areaTodasPeneiras">Área das quatro peneiras (m²)</string>
 </resources>
