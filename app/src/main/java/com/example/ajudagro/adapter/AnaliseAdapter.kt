@@ -7,12 +7,13 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
+import com.example.ajudagro.SelecionarAnaliseFragmentArgs
 import com.example.ajudagro.SelecionarAnaliseFragmentDirections
 import com.example.ajudagro.database.models.Analise
 import com.example.ajudagro.database.viewmodel.AnaliseViewModel
 import com.example.ajudagro.databinding.AnaliseAdapterBinding
 
-class AnaliseAdapter(private val analiseViewModel: AnaliseViewModel) : RecyclerView.Adapter<AnaliseAdapter.MyViewHolder>() {
+class AnaliseAdapter(private val analiseViewModel: AnaliseViewModel, private val args: SelecionarAnaliseFragmentArgs) : RecyclerView.Adapter<AnaliseAdapter.MyViewHolder>() {
 
     private var analiseList = emptyList<Analise>()
 
@@ -31,11 +32,13 @@ class AnaliseAdapter(private val analiseViewModel: AnaliseViewModel) : RecyclerV
         holder.deletarAnaliseButton.setOnClickListener {
             deletarAnalise(analiseAtual, holder.itemView.context)
         }
-
-        holder.itemView.rootView.setOnClickListener {
-            val action = SelecionarAnaliseFragmentDirections.actionSelecionarAnaliseFragmentToEditarColetaFragment(analise = analiseAtual)
-            holder.itemView.findNavController().navigate(action)
+        if (args.estado == "editar"){
+            holder.itemView.rootView.setOnClickListener {
+                val action = SelecionarAnaliseFragmentDirections.actionSelecionarAnaliseFragmentToEditarColetaFragment(analise = analiseAtual)
+                holder.itemView.findNavController().navigate(action)
+            }
         }
+
     }
 
     class MyViewHolder(binding: AnaliseAdapterBinding) : RecyclerView.ViewHolder(binding.root){

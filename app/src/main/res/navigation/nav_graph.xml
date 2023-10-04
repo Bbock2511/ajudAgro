@@ -55,6 +55,10 @@
         <action
             android:id="@+id/action_selecionarAnaliseFragment_to_analisarColetaFragment"
             app:destination="@id/analisarColetaFragment" />
+        <argument
+            android:name="estado"
+            app:argType="string"
+            android:defaultValue="editar" />
     </fragment>
     <fragment
         android:id="@+id/editarColetaFragment"
