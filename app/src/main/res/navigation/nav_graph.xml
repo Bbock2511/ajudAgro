@@ -95,6 +95,9 @@
         <action
             android:id="@+id/action_analisarColetaFragment_to_analisarColetaSegundaParteFragment"
             app:destination="@id/analisarColetaSegundaParteFragment" />
+        <argument
+            android:name="analise"
+            app:argType="com.example.ajudagro.database.models.Analise" />
     </fragment>
     <fragment
         android:id="@+id/analisarColetaSegundaParteFragment"

@@ -5,55 +5,65 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.navArgs
+import com.example.ajudagro.databinding.FragmentAnalisarColetaBinding
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [AnalisarColetaFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class AnalisarColetaFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+    private val args by navArgs<AnalisarColetaFragmentArgs>()
+
+    private var _binding:FragmentAnalisarColetaBinding? = null
+    private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_analisar_coleta, container, false)
+    ): View {
+        _binding = FragmentAnalisarColetaBinding.inflate(inflater, container, false)
+
+        binding.nomeAnalise.text = args.analise.analiseGeral.nome
+
+        val peneiraUm = args.analise.emCimaPeneiraUm
+        val peneiraDois = args.analise.emCimaPeneiraDois
+        val peneiraTres = args.analise.emCimaPeneiraTres
+        val peneiraQuatro = args.analise.emCimaPeneiraQuatro
+        val embaixoPeneiraUm = args.analise.embaixoPeneiraUm
+        val embaixoPeneiraDois = args.analise.embaixoPeneiraDois
+        val embaixoPeneiraTres = args.analise.embaixoPeneiraTres
+        val embaixoPeneiraQuatro = args.analise.embaixoPeneiraQuatro
+        val areaTodasPeneiras = args.analise.areaTodasPeneiras
+
+        val perdasPlataforma = calcularPerdasPlataforma(peneiraUm, peneiraDois, peneiraTres, peneiraQuatro, areaTodasPeneiras)
+        binding.perdasPlataformaKgResultado.text = perdasPlataforma[0]
+        binding.perdasPlataformaSacasResultado.text = perdasPlataforma[1]
+
+        val perdaSistemaIndustrial = calcularPerdasSistemaIndustrial(embaixoPeneiraUm, embaixoPeneiraDois, embaixoPeneiraTres, embaixoPeneiraQuatro, areaTodasPeneiras)
+        binding.perdasSistemaIndustrialKgResultado.text = perdaSistemaIndustrial[0]
+        binding.perdasSistemaIndustrialSacasResultado.text = perdaSistemaIndustrial[1]
+
+        binding.avancarButtonAnalisar
+
+        return binding.root
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment AnalisarColetaFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            AnalisarColetaFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+    private fun calcularPerdasPlataforma(peneiraUm:Float, peneiraDois:Float, peneiraTres:Float , peneiraQuatro:Float, areaTodasPeneiras:Float): Array<String> {
+        val perdasPlataformaKg =
+            ((10000 * (peneiraUm + peneiraDois + peneiraTres + peneiraQuatro)) / areaTodasPeneiras) / 1000
+        val perdasPlataformaSacas = perdasPlataformaKg / 60
+
+        return arrayOf(perdasPlataformaKg.toString(), perdasPlataformaSacas.toString())
+    }
+
+    private fun calcularPerdasSistemaIndustrial(embaixoPeneiraUm:Float, embaixoPeneiraDois:Float, embaixoPeneiraTres:Float , embaixoPeneiraQuatro:Float, areaTodasPeneiras:Float): Array<String> {
+        val perdasSistemaIndustrialKg =
+            ((10000 * (embaixoPeneiraUm + embaixoPeneiraDois + embaixoPeneiraTres + embaixoPeneiraQuatro)) / areaTodasPeneiras) / 1000
+        val perdasSistemaIndustrialSacas = perdasSistemaIndustrialKg / 60
+
+        return arrayOf(perdasSistemaIndustrialKg.toString(), perdasSistemaIndustrialSacas.toString())
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 }

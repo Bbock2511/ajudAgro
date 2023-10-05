@@ -46,17 +46,19 @@
         app:layout_constraintHorizontal_bias="0.704"
         app:layout_constraintStart_toEndOf="@+id/buttonCadastrarColeta"
         app:layout_constraintTop_toBottomOf="@+id/appCompatImageView"
-        app:layout_constraintVertical_bias="0.148" />
+        app:layout_constraintVertical_bias="0.15" />
+
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/buttonAnalisarColeta"
         android:layout_width="144dp"
         android:layout_height="130dp"
+        android:layout_marginStart="36dp"
         android:drawableTop="@drawable/analisar_coleta_vector"
         android:text="@string/analisar_coleta_text_button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.161"
+        app:layout_constraintHorizontal_bias="0.03"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/buttonCadastrarColeta"
         app:layout_constraintVertical_bias="0.254" />
@@ -65,15 +67,15 @@
         android:id="@+id/buttonGerarRelatorios"
         android:layout_width="144dp"
         android:layout_height="130dp"
+        android:layout_marginEnd="36dp"
         android:drawableTop="@drawable/gerar_relatorio_vector"
         android:text="@string/gerar_relatorios_text_button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.387"
+        app:layout_constraintHorizontal_bias="0.704"
         app:layout_constraintStart_toEndOf="@+id/buttonAnalisarColeta"
         app:layout_constraintTop_toBottomOf="@+id/buttonEditarColeta"
-        app:layout_constraintVertical_bias="0.247" />
-
+        app:layout_constraintVertical_bias="0.254" />
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"

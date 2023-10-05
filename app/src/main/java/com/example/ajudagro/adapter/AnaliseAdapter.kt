@@ -38,6 +38,12 @@ class AnaliseAdapter(private val analiseViewModel: AnaliseViewModel, private val
                 holder.itemView.findNavController().navigate(action)
             }
         }
+        if (args.estado == "analisar"){
+            holder.itemView.rootView.setOnClickListener {
+                val action = SelecionarAnaliseFragmentDirections.actionSelecionarAnaliseFragmentToAnalisarColetaFragment(analise = analiseAtual)
+                holder.itemView.findNavController().navigate(action)
+            }
+        }
 
     }
 

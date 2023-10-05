@@ -35,6 +35,11 @@ class HomeFragment : Fragment() {
             findNavController().navigate(action)
         }
 
+        binding.buttonAnalisarColeta.setOnClickListener {
+            val action = HomeFragmentDirections.actionHomeFragmentToSelecionarAnaliseFragment(estado = "analisar")
+            findNavController().navigate(action)
+        }
+
 
         return binding.root
     }
