@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.example.ajudagro.databinding.FragmentAnalisarColetaBinding
 
@@ -34,32 +35,35 @@ class AnalisarColetaFragment : Fragment() {
         val areaTodasPeneiras = args.analise.areaTodasPeneiras
 
         val perdasPlataforma = calcularPerdasPlataforma(peneiraUm, peneiraDois, peneiraTres, peneiraQuatro, areaTodasPeneiras)
-        binding.perdasPlataformaKgResultado.text = perdasPlataforma[0]
-        binding.perdasPlataformaSacasResultado.text = perdasPlataforma[1]
+        binding.perdasPlataformaKgResultado.text = perdasPlataforma[0].toString()
+        binding.perdasPlataformaSacasResultado.text = perdasPlataforma[1].toString()
 
         val perdaSistemaIndustrial = calcularPerdasSistemaIndustrial(embaixoPeneiraUm, embaixoPeneiraDois, embaixoPeneiraTres, embaixoPeneiraQuatro, areaTodasPeneiras)
-        binding.perdasSistemaIndustrialKgResultado.text = perdaSistemaIndustrial[0]
-        binding.perdasSistemaIndustrialSacasResultado.text = perdaSistemaIndustrial[1]
+        binding.perdasSistemaIndustrialKgResultado.text = perdaSistemaIndustrial[0].toString()
+        binding.perdasSistemaIndustrialSacasResultado.text = perdaSistemaIndustrial[1].toString()
 
-        binding.avancarButtonAnalisar
+        binding.avancarButtonAnalisar.setOnClickListener {
+            val action = AnalisarColetaFragmentDirections.actionAnalisarColetaFragmentToAnalisarColetaSegundaParteFragment(perdasSistemaIndustrialKg = perdaSistemaIndustrial[0], perdasPlataformaKg = perdasPlataforma[0])
+            findNavController().navigate(action)
+        }
 
         return binding.root
     }
 
-    private fun calcularPerdasPlataforma(peneiraUm:Float, peneiraDois:Float, peneiraTres:Float , peneiraQuatro:Float, areaTodasPeneiras:Float): Array<String> {
+    private fun calcularPerdasPlataforma(peneiraUm:Float, peneiraDois:Float, peneiraTres:Float , peneiraQuatro:Float, areaTodasPeneiras:Float): Array<Float> {
         val perdasPlataformaKg =
             ((10000 * (peneiraUm + peneiraDois + peneiraTres + peneiraQuatro)) / areaTodasPeneiras) / 1000
         val perdasPlataformaSacas = perdasPlataformaKg / 60
 
-        return arrayOf(perdasPlataformaKg.toString(), perdasPlataformaSacas.toString())
+        return arrayOf(perdasPlataformaKg, perdasPlataformaSacas)
     }
 
-    private fun calcularPerdasSistemaIndustrial(embaixoPeneiraUm:Float, embaixoPeneiraDois:Float, embaixoPeneiraTres:Float , embaixoPeneiraQuatro:Float, areaTodasPeneiras:Float): Array<String> {
+    private fun calcularPerdasSistemaIndustrial(embaixoPeneiraUm:Float, embaixoPeneiraDois:Float, embaixoPeneiraTres:Float , embaixoPeneiraQuatro:Float, areaTodasPeneiras:Float): Array<Float> {
         val perdasSistemaIndustrialKg =
             ((10000 * (embaixoPeneiraUm + embaixoPeneiraDois + embaixoPeneiraTres + embaixoPeneiraQuatro)) / areaTodasPeneiras) / 1000
         val perdasSistemaIndustrialSacas = perdasSistemaIndustrialKg / 60
 
-        return arrayOf(perdasSistemaIndustrialKg.toString(), perdasSistemaIndustrialSacas.toString())
+        return arrayOf(perdasSistemaIndustrialKg, perdasSistemaIndustrialSacas)
     }
 
     override fun onDestroyView() {

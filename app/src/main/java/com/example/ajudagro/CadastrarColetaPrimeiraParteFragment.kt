@@ -23,7 +23,6 @@ class CadastrarColetaPrimeiraParteFragment : Fragment() {
 
         binding.estadoInput.setOnEditorActionListener { _, _, _ -> false }
 
-
         binding.buttonAvancar.setOnClickListener {
             enviarDadosParaSegundaParte()
         }
