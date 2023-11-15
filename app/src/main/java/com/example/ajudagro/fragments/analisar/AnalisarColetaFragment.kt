@@ -1,4 +1,4 @@
-package com.example.ajudagro
+package com.example.ajudagro.fragments.analisar
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

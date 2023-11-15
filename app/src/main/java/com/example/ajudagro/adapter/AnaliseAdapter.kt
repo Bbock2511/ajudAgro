@@ -7,11 +7,11 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
-import com.example.ajudagro.SelecionarAnaliseFragmentArgs
-import com.example.ajudagro.SelecionarAnaliseFragmentDirections
 import com.example.ajudagro.database.models.Analise
 import com.example.ajudagro.database.viewmodel.AnaliseViewModel
 import com.example.ajudagro.databinding.AnaliseAdapterBinding
+import com.example.ajudagro.fragments.selecionar.SelecionarAnaliseFragmentArgs
+import com.example.ajudagro.fragments.selecionar.SelecionarAnaliseFragmentDirections
 
 class AnaliseAdapter(private val analiseViewModel: AnaliseViewModel, private val args: SelecionarAnaliseFragmentArgs) : RecyclerView.Adapter<AnaliseAdapter.MyViewHolder>() {
 

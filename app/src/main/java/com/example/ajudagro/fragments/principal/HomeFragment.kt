@@ -1,4 +1,4 @@
-package com.example.ajudagro
+package com.example.ajudagro.fragments.principal
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
+import com.example.ajudagro.R
 import com.example.ajudagro.databinding.FragmentHomeBinding
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 

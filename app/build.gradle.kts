@@ -56,9 +56,6 @@ dependencies {
 
     ksp("androidx.room:room-compiler:$roomVersion")
 
-    //charts
-    implementation("com.github.PhilJay:MPAndroidChart:v3.1.0")
-
     //Navigation Component
     val navVersion = "2.7.4"
     implementation("androidx.navigation:navigation-fragment-ktx:$navVersion")

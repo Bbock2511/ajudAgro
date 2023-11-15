@@ -1,4 +1,4 @@
-package com.example.ajudagro
+package com.example.ajudagro.fragments.editar
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -9,6 +9,7 @@ import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
+import com.example.ajudagro.R
 import com.example.ajudagro.database.models.Analise
 import com.example.ajudagro.database.viewmodel.AnaliseViewModel
 import com.example.ajudagro.databinding.FragmentEditarColetaSegundaParteBinding
