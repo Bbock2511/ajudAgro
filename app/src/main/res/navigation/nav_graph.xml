@@ -59,6 +59,9 @@
             android:name="estado"
             app:argType="string"
             android:defaultValue="editar" />
+        <action
+            android:id="@+id/action_selecionarAnaliseFragment_to_gerarRelatorioFragment"
+            app:destination="@id/gerarRelatorioFragment" />
     </fragment>
     <fragment
         android:id="@+id/editarColetaFragment"
@@ -113,5 +116,14 @@
         <argument
             android:name="perdasPlataformaKg"
             app:argType="float" />
+    </fragment>
+    <fragment
+        android:id="@+id/gerarRelatorioFragment"
+        android:name="com.example.ajudagro.fragments.relatorio.GerarRelatorioFragment"
+        android:label="fragment_gerar_relatorio"
+        tools:layout="@layout/fragment_gerar_relatorio" >
+        <argument
+            android:name="analise"
+            app:argType="com.example.ajudagro.database.models.Analise" />
     </fragment>
 </navigation>

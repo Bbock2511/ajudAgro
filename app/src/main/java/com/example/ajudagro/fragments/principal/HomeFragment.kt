@@ -41,6 +41,11 @@ class HomeFragment : Fragment() {
             findNavController().navigate(action)
         }
 
+        binding.buttonGerarRelatorios.setOnClickListener {
+            val action = HomeFragmentDirections.actionHomeFragmentToSelecionarAnaliseFragment(estado = "gerar relatorio")
+            findNavController().navigate(action)
+        }
+
 
         return binding.root
     }

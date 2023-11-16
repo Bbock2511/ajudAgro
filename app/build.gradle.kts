@@ -46,6 +46,10 @@ dependencies {
         implementation("com.google.devtools.ksp:symbol-processing-api:1.9.10-1.0.13")
     }
 
+    //Ferramentas Relatório(PDF, Gráfico)
+    implementation("com.itextpdf:itextg:5.5.10")
+    implementation("com.github.PhilJay:MPAndroidChart:3.1.0")
+
     //Room Database
     val roomVersion = "2.5.2"
 

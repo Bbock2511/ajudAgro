@@ -44,6 +44,12 @@ class AnaliseAdapter(private val analiseViewModel: AnaliseViewModel, private val
                 holder.itemView.findNavController().navigate(action)
             }
         }
+        if (args.estado == "gerar relatorio"){
+            holder.itemView.rootView.setOnClickListener {
+                val action = SelecionarAnaliseFragmentDirections.actionSelecionarAnaliseFragmentToGerarRelatorioFragment(analise = analiseAtual)
+                holder.itemView.findNavController().navigate(action)
+            }
+        }
 
     }
 
