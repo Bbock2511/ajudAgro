@@ -1,7 +1,5 @@
 package com.example.ajudagro.fragments.relatorio
 
-import android.Manifest
-import android.content.pm.PackageManager
 import android.graphics.Bitmap
 import android.graphics.Canvas
 import android.graphics.Color
@@ -13,7 +11,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.ViewTreeObserver
 import android.widget.Toast
-import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.navArgs
 import com.example.ajudagro.databinding.FragmentGerarRelatorioBinding
@@ -35,8 +32,6 @@ import java.io.FileOutputStream
 class GerarRelatorioFragment : Fragment() {
 
     private val args by navArgs<GerarRelatorioFragmentArgs>()
-
-    private val MY_PERMISSIONS_REQUEST_WRITE_EXTERNAL_STORAGE = 101
 
     private var _binding: FragmentGerarRelatorioBinding? = null
     private val binding get() = _binding!!
@@ -72,23 +67,10 @@ class GerarRelatorioFragment : Fragment() {
         )
 
         botaoGerarRelatorio.setOnClickListener {
-            if (ContextCompat.checkSelfPermission(
-                    requireContext(),
-                    Manifest.permission.WRITE_EXTERNAL_STORAGE
-                ) != PackageManager.PERMISSION_GRANTED
-            ) {
-                // Solicita permissão ao usuário
-                requestPermissions(
-                    arrayOf(Manifest.permission.WRITE_EXTERNAL_STORAGE),
-                    MY_PERMISSIONS_REQUEST_WRITE_EXTERNAL_STORAGE
-                )
-            } else {
 
-                val grafico = gerarGrafico(pieChart)
-                // Se a permissão já foi concedida, cria o PDF
-                gerarRelatorio(args.analise.analiseGeral.nome.toString(), perdasPlataforma, perdasPlataforma/60,
-                    perdasSistemaIndustrial, perdasSistemaIndustrial/60, grafico)
-            }
+            val grafico = gerarGrafico(pieChart)
+            gerarRelatorio(args.analise.analiseGeral.nome.toString(), perdasPlataforma, perdasPlataforma/60,
+                perdasSistemaIndustrial, perdasSistemaIndustrial/60, grafico)
         }
 
         return binding.root
