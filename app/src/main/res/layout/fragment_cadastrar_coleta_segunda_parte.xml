@@ -1,371 +1,377 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".fragments.cadastrar.CadastrarColetaSegundaParteFragment">
-
-    <TextView
-        android:id="@+id/diametroPeneira"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:gravity="top"
-        android:text="@string/diametroPeneira"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.066"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.022" />
-
-    <EditText
-        android:id="@+id/diametroPeneiraInput"
-        android:layout_width="150dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="2dp"
-        android:background="@color/cinza"
-        android:gravity="center"
-        android:hint="@string/exemplosMedidasPeneiras"
-        android:importantForAutofill="no"
-        android:inputType="numberDecimal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
-        app:layout_constraintStart_toEndOf="@+id/diametroPeneira"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="DuplicateSpeakableTextCheck,TextContrastCheck" />
-
-    <TextView
-        android:id="@+id/areaPeneira"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="36dp"
-        android:gravity="top"
-        android:text="@string/areaPeneira"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.062"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/diametroPeneira" />
-
-    <EditText
-        android:id="@+id/areaPeneiraInput"
-        android:layout_width="150dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="8dp"
-        android:autofillHints="0.00"
-        android:background="@color/cinza"
-        android:gravity="center"
-        android:hint="@string/exemplosMedidasPeneiras"
-        android:inputType="numberDecimal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
-        app:layout_constraintStart_toEndOf="@+id/diametroPeneira"
-        app:layout_constraintTop_toBottomOf="@id/diametroPeneiraInput"
-        tools:ignore="TextContrastCheck" />
-
-    <TextView
-        android:id="@+id/areaTodasPeneiras"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="36dp"
-        android:gravity="top"
-        android:text="@string/areaTodasPeneiras"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.062"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/areaPeneira" />
-
-    <EditText
-        android:id="@+id/areaTodasPeneiraInput"
-        android:layout_width="150dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="8dp"
-        android:autofillHints="0.00"
-        android:background="@color/cinza"
-        android:gravity="center"
-        android:hint="@string/exemplosMedidasPeneiras"
-        android:inputType="numberDecimal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
-        app:layout_constraintStart_toEndOf="@+id/diametroPeneira"
-        app:layout_constraintTop_toBottomOf="@id/areaPeneiraInput"
-        tools:ignore="TextContrastCheck" />
-
-    <View
-        android:id="@+id/view"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="4dp"
-        android:layout_marginTop="8dp"
-        android:background="@color/verde"
-        app:layout_constraintTop_toBottomOf="@id/areaTodasPeneiraInput" />
-
-    <TextView
-        android:id="@+id/perdasGraosTextView"
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="8dp"
-        android:gravity="top"
-        android:text="@string/sessaoPerdasDeGraos"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view" />
+        tools:context=".fragments.cadastrar.CadastrarColetaSegundaParteFragment">
 
-    <TextView
-        android:id="@+id/peneiraUmTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="14dp"
-        android:text="@string/peneira1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.045"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/perdasGraosTextView" />
+        <TextView
+            android:id="@+id/diametroPeneira"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:gravity="top"
+            android:text="@string/diametroPeneira"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.066"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.022" />
 
-    <EditText
-        android:id="@+id/peneiraUmInput"
-        android:layout_width="150dp"
-        android:layout_height="48dp"
-        android:background="@color/cinza"
-        android:hint="@string/exemplosMedidasPeneiras"
-        android:layout_marginTop="10dp"
-        android:inputType="numberDecimal"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:padding="10dp"
-        app:layout_constraintHorizontal_bias="0.061"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/peneiraUmTextView"
-        tools:ignore="TextContrastCheck"
-        android:importantForAutofill="no" />
+        <EditText
+            android:id="@+id/diametroPeneiraInput"
+            android:layout_width="150dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="2dp"
+            android:background="@color/cinza"
+            android:gravity="center"
+            android:hint="@string/exemplosMedidasPeneiras"
+            android:importantForAutofill="no"
+            android:inputType="numberDecimal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.494"
+            app:layout_constraintStart_toEndOf="@+id/diametroPeneira"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="DuplicateSpeakableTextCheck,TextContrastCheck" />
 
-    <TextView
-        android:id="@+id/peneiraDoisTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="14dp"
-        android:text="@string/peneira2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.613"
-        app:layout_constraintStart_toEndOf="@+id/peneiraUmTextView"
-        app:layout_constraintTop_toBottomOf="@+id/perdasGraosTextView" />
+        <TextView
+            android:id="@+id/areaPeneira"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="36dp"
+            android:gravity="top"
+            android:text="@string/areaPeneira"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.062"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/diametroPeneira" />
 
-    <EditText
-        android:id="@+id/peneiraDoisInput"
-        android:layout_width="150dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="10dp"
-        android:background="@color/cinza"
-        android:hint="@string/exemplosMedidasPeneiras"
-        android:inputType="numberDecimal"
-        android:padding="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.831"
-        app:layout_constraintStart_toEndOf="@+id/peneiraUmInput"
-        app:layout_constraintTop_toBottomOf="@+id/peneiraDoisTextView"
-        tools:ignore="TextContrastCheck"
-        android:importantForAutofill="no" />
+        <EditText
+            android:id="@+id/areaPeneiraInput"
+            android:layout_width="150dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="8dp"
+            android:autofillHints="0.00"
+            android:background="@color/cinza"
+            android:gravity="center"
+            android:hint="@string/exemplosMedidasPeneiras"
+            android:inputType="numberDecimal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.494"
+            app:layout_constraintStart_toEndOf="@+id/diametroPeneira"
+            app:layout_constraintTop_toBottomOf="@id/diametroPeneiraInput"
+            tools:ignore="TextContrastCheck" />
 
-    <TextView
-        android:id="@+id/peneiraTresTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="@string/peneira3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.045"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/peneiraUmInput" />
+        <TextView
+            android:id="@+id/areaTodasPeneiras"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="36dp"
+            android:gravity="top"
+            android:text="@string/areaTodasPeneiras"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.062"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/areaPeneira" />
 
-    <EditText
-        android:id="@+id/peneiraTresInput"
-        android:layout_width="150dp"
-        android:layout_height="48dp"
-        android:background="@color/cinza"
-        android:hint="@string/exemplosMedidasPeneiras"
-        android:layout_marginTop="10dp"
-        android:inputType="numberDecimal"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:padding="10dp"
-        app:layout_constraintHorizontal_bias="0.061"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/peneiraTresTextView"
-        tools:ignore="TextContrastCheck"
-        android:importantForAutofill="no" />
+        <EditText
+            android:id="@+id/areaTodasPeneiraInput"
+            android:layout_width="150dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="8dp"
+            android:autofillHints="0.00"
+            android:background="@color/cinza"
+            android:gravity="center"
+            android:hint="@string/exemplosMedidasPeneiras"
+            android:inputType="numberDecimal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.494"
+            app:layout_constraintStart_toEndOf="@+id/diametroPeneira"
+            app:layout_constraintTop_toBottomOf="@id/areaPeneiraInput"
+            tools:ignore="TextContrastCheck" />
 
-    <TextView
-        android:id="@+id/peneiraQuatroTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="@string/peneira4"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.613"
-        app:layout_constraintStart_toEndOf="@+id/peneiraUmTextView"
-        app:layout_constraintTop_toBottomOf="@+id/peneiraDoisInput" />
+        <View
+            android:id="@+id/view"
+            android:layout_width="match_parent"
+            android:layout_height="4dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/verde"
+            app:layout_constraintTop_toBottomOf="@id/areaTodasPeneiraInput" />
 
-    <EditText
-        android:id="@+id/peneiraQuatroInput"
-        android:layout_width="150dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="10dp"
-        android:background="@color/cinza"
-        android:hint="@string/exemplosMedidasPeneiras"
-        android:inputType="numberDecimal"
-        android:padding="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.831"
-        app:layout_constraintStart_toEndOf="@+id/peneiraTresInput"
-        app:layout_constraintTop_toBottomOf="@+id/peneiraQuatroTextView"
-        tools:ignore="TextContrastCheck"
-        android:importantForAutofill="no" />
+        <TextView
+            android:id="@+id/perdasGraosTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="8dp"
+            android:gravity="top"
+            android:text="@string/sessaoPerdasDeGraos"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view" />
 
-    <View
-        android:id="@+id/view2"
-        android:layout_width="match_parent"
-        android:layout_height="4dp"
-        android:layout_marginTop="8dp"
-        android:background="@color/verde"
-        app:layout_constraintTop_toBottomOf="@id/peneiraQuatroInput"
-        tools:layout_editor_absoluteX="0dp" />
+        <TextView
+            android:id="@+id/peneiraUmTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:text="@string/peneira1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.045"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/perdasGraosTextView" />
 
-    <TextView
-        android:id="@+id/perdasGraosEmbaixoTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="8dp"
-        android:gravity="top"
-        android:text="@string/sessaoPerdasDeGraosEmbaixo"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view2" />
+        <EditText
+            android:id="@+id/peneiraUmInput"
+            android:layout_width="150dp"
+            android:layout_height="48dp"
+            android:background="@color/cinza"
+            android:hint="@string/exemplosMedidasPeneiras"
+            android:layout_marginTop="10dp"
+            android:inputType="numberDecimal"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:padding="10dp"
+            app:layout_constraintHorizontal_bias="0.061"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/peneiraUmTextView"
+            tools:ignore="TextContrastCheck"
+            android:importantForAutofill="no" />
 
-    <TextView
-        android:id="@+id/embaixoPeneiraUmTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="14dp"
-        android:text="@string/peneira1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.045"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/perdasGraosEmbaixoTextView" />
+        <TextView
+            android:id="@+id/peneiraDoisTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:text="@string/peneira2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.613"
+            app:layout_constraintStart_toEndOf="@+id/peneiraUmTextView"
+            app:layout_constraintTop_toBottomOf="@+id/perdasGraosTextView" />
 
-    <EditText
-        android:id="@+id/embaixoPeneiraUmInput"
-        android:layout_width="150dp"
-        android:layout_height="48dp"
-        android:background="@color/cinza"
-        android:hint="@string/exemplosMedidasPeneiras"
-        android:layout_marginTop="10dp"
-        android:inputType="numberDecimal"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:padding="10dp"
-        app:layout_constraintHorizontal_bias="0.061"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/embaixoPeneiraUmTextView"
-        tools:ignore="TextContrastCheck"
-        android:importantForAutofill="no" />
+        <EditText
+            android:id="@+id/peneiraDoisInput"
+            android:layout_width="150dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/cinza"
+            android:hint="@string/exemplosMedidasPeneiras"
+            android:inputType="numberDecimal"
+            android:padding="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.831"
+            app:layout_constraintStart_toEndOf="@+id/peneiraUmInput"
+            app:layout_constraintTop_toBottomOf="@+id/peneiraDoisTextView"
+            tools:ignore="TextContrastCheck"
+            android:importantForAutofill="no" />
 
-    <TextView
-        android:id="@+id/embaixoPeneiraDoisTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="14dp"
-        android:text="@string/peneira2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.613"
-        app:layout_constraintStart_toEndOf="@+id/embaixoPeneiraUmTextView"
-        app:layout_constraintTop_toBottomOf="@+id/perdasGraosEmbaixoTextView" />
+        <TextView
+            android:id="@+id/peneiraTresTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/peneira3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.045"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/peneiraUmInput" />
 
-    <EditText
-        android:id="@+id/embaixoPeneiraDoisInput"
-        android:layout_width="150dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="10dp"
-        android:background="@color/cinza"
-        android:hint="@string/exemplosMedidasPeneiras"
-        android:inputType="numberDecimal"
-        android:padding="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.831"
-        app:layout_constraintStart_toEndOf="@+id/embaixoPeneiraUmInput"
-        app:layout_constraintTop_toBottomOf="@+id/embaixoPeneiraDoisTextView"
-        tools:ignore="TextContrastCheck"
-        android:importantForAutofill="no" />
+        <EditText
+            android:id="@+id/peneiraTresInput"
+            android:layout_width="150dp"
+            android:layout_height="48dp"
+            android:background="@color/cinza"
+            android:hint="@string/exemplosMedidasPeneiras"
+            android:layout_marginTop="10dp"
+            android:inputType="numberDecimal"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:padding="10dp"
+            app:layout_constraintHorizontal_bias="0.061"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/peneiraTresTextView"
+            tools:ignore="TextContrastCheck"
+            android:importantForAutofill="no" />
 
-    <TextView
-        android:id="@+id/embaixoPeneiraTresTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="@string/peneira3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.045"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/embaixoPeneiraUmInput" />
+        <TextView
+            android:id="@+id/peneiraQuatroTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/peneira4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.613"
+            app:layout_constraintStart_toEndOf="@+id/peneiraUmTextView"
+            app:layout_constraintTop_toBottomOf="@+id/peneiraDoisInput" />
 
-    <EditText
-        android:id="@+id/embaixoPeneiraTresInput"
-        android:layout_width="150dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="10dp"
-        android:background="@color/cinza"
-        android:hint="@string/exemplosMedidasPeneiras"
-        android:inputType="numberDecimal"
-        android:padding="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.061"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/embaixoPeneiraTresTextView"
-        tools:ignore="TextContrastCheck"
-        android:importantForAutofill="no" />
+        <EditText
+            android:id="@+id/peneiraQuatroInput"
+            android:layout_width="150dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/cinza"
+            android:hint="@string/exemplosMedidasPeneiras"
+            android:inputType="numberDecimal"
+            android:padding="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.831"
+            app:layout_constraintStart_toEndOf="@+id/peneiraTresInput"
+            app:layout_constraintTop_toBottomOf="@+id/peneiraQuatroTextView"
+            tools:ignore="TextContrastCheck"
+            android:importantForAutofill="no" />
 
-    <TextView
-        android:id="@+id/embaixoPeneiraQuatroTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="@string/peneira4"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.613"
-        app:layout_constraintStart_toEndOf="@+id/embaixoPeneiraUmTextView"
-        app:layout_constraintTop_toBottomOf="@+id/embaixoPeneiraDoisInput" />
+        <View
+            android:id="@+id/view2"
+            android:layout_width="match_parent"
+            android:layout_height="4dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/verde"
+            app:layout_constraintTop_toBottomOf="@id/peneiraQuatroInput"
+            tools:layout_editor_absoluteX="0dp" />
 
-    <EditText
-        android:id="@+id/embaixoPeneiraQuatroInput"
-        android:layout_width="150dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="10dp"
-        android:background="@color/cinza"
-        android:hint="@string/exemplosMedidasPeneiras"
-        android:inputType="numberDecimal"
-        android:padding="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.831"
-        app:layout_constraintStart_toEndOf="@+id/embaixoPeneiraTresInput"
-        app:layout_constraintTop_toBottomOf="@+id/embaixoPeneiraQuatroTextView"
-        tools:ignore="TextContrastCheck"
-        android:importantForAutofill="no" />
+        <TextView
+            android:id="@+id/perdasGraosEmbaixoTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="8dp"
+            android:gravity="top"
+            android:text="@string/sessaoPerdasDeGraosEmbaixo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view2" />
 
-    <Button
-        android:id="@+id/buttonSalvar"
-        android:layout_width="110dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:backgroundTint="@color/verde"
-        android:text="@string/salvarNoDB"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/embaixoPeneiraQuatroInput"
-        tools:ignore="TextContrastCheck" />
+        <TextView
+            android:id="@+id/embaixoPeneiraUmTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:text="@string/peneira1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.045"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/perdasGraosEmbaixoTextView" />
+
+        <EditText
+            android:id="@+id/embaixoPeneiraUmInput"
+            android:layout_width="150dp"
+            android:layout_height="48dp"
+            android:background="@color/cinza"
+            android:hint="@string/exemplosMedidasPeneiras"
+            android:layout_marginTop="10dp"
+            android:inputType="numberDecimal"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:padding="10dp"
+            app:layout_constraintHorizontal_bias="0.061"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/embaixoPeneiraUmTextView"
+            tools:ignore="TextContrastCheck"
+            android:importantForAutofill="no" />
+
+        <TextView
+            android:id="@+id/embaixoPeneiraDoisTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:text="@string/peneira2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.613"
+            app:layout_constraintStart_toEndOf="@+id/embaixoPeneiraUmTextView"
+            app:layout_constraintTop_toBottomOf="@+id/perdasGraosEmbaixoTextView" />
+
+        <EditText
+            android:id="@+id/embaixoPeneiraDoisInput"
+            android:layout_width="150dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/cinza"
+            android:hint="@string/exemplosMedidasPeneiras"
+            android:inputType="numberDecimal"
+            android:padding="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.831"
+            app:layout_constraintStart_toEndOf="@+id/embaixoPeneiraUmInput"
+            app:layout_constraintTop_toBottomOf="@+id/embaixoPeneiraDoisTextView"
+            tools:ignore="TextContrastCheck"
+            android:importantForAutofill="no" />
+
+        <TextView
+            android:id="@+id/embaixoPeneiraTresTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/peneira3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.045"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/embaixoPeneiraUmInput" />
+
+        <EditText
+            android:id="@+id/embaixoPeneiraTresInput"
+            android:layout_width="150dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/cinza"
+            android:hint="@string/exemplosMedidasPeneiras"
+            android:inputType="numberDecimal"
+            android:padding="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.061"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/embaixoPeneiraTresTextView"
+            tools:ignore="TextContrastCheck"
+            android:importantForAutofill="no" />
+
+        <TextView
+            android:id="@+id/embaixoPeneiraQuatroTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/peneira4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.613"
+            app:layout_constraintStart_toEndOf="@+id/embaixoPeneiraUmTextView"
+            app:layout_constraintTop_toBottomOf="@+id/embaixoPeneiraDoisInput" />
+
+        <EditText
+            android:id="@+id/embaixoPeneiraQuatroInput"
+            android:layout_width="150dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/cinza"
+            android:hint="@string/exemplosMedidasPeneiras"
+            android:inputType="numberDecimal"
+            android:padding="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.831"
+            app:layout_constraintStart_toEndOf="@+id/embaixoPeneiraTresInput"
+            app:layout_constraintTop_toBottomOf="@+id/embaixoPeneiraQuatroTextView"
+            tools:ignore="TextContrastCheck"
+            android:importantForAutofill="no" />
+
+        <Button
+            android:id="@+id/buttonSalvar"
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:backgroundTint="@color/verde"
+            android:text="@string/salvarNoDB"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/embaixoPeneiraQuatroInput"
+            tools:ignore="TextContrastCheck" />
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

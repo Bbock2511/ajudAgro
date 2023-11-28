@@ -42,8 +42,10 @@ data class Analise(
 data class AnaliseGeral(
     @ColumnInfo("Nome")
     val nome: String?,
-    @ColumnInfo("Coordenadas")
-    val coordenadas: String?,
+    @ColumnInfo("Latitude")
+    val latitude: String?,
+    @ColumnInfo("Longitude")
+    val longitude: String?,
     @ColumnInfo("Area")
     val area: Int,
     @ColumnInfo("Maquinario")

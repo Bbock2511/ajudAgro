@@ -32,7 +32,8 @@ class CadastrarColetaPrimeiraParteFragment : Fragment() {
 
      private fun enviarDadosParaSegundaParte(){
         val nome = binding.nomeDaColetaInput.text.toString()
-        val coordenadas = binding.coordenadasInput.text.toString()
+        val latitude = binding.latitudeInput.text.toString()
+        val longitude = binding.longitudeInput.text.toString()
         val dimensoesArea = binding.areaInput.text.toString()
         val maquinario = binding.maquinarioInput.text.toString()
         val dataAnalise = binding.dataAnaliseInput.text.toString()
@@ -41,14 +42,15 @@ class CadastrarColetaPrimeiraParteFragment : Fragment() {
 
         if (stringsNaoSaoVazias(
                 nome,
-                coordenadas,
+                latitude,
+                longitude,
                 dimensoesArea,
                 maquinario,
                 dataAnalise,
                 cidade,
                 estado
             )) {
-            val analiseGeral = AnaliseGeral(nome, coordenadas, dimensoesArea.toInt(), maquinario, dataAnalise, cidade, estado)
+            val analiseGeral = AnaliseGeral(nome, latitude, longitude, dimensoesArea.toInt(), maquinario, dataAnalise, cidade, estado)
 
             val action = CadastrarColetaPrimeiraParteFragmentDirections.actionCadastrarColetaPrimeiraParteFragmentToCadastrarColetaSegundaParteFragment(analiseGeral)
             findNavController().navigate(action)

@@ -27,7 +27,8 @@ class EditarColetaFragment : Fragment() {
 
 
         binding.nomeDaColetaInput.setText(args.analise.analiseGeral.nome)
-        binding.coordenadasInput.setText(args.analise.analiseGeral.coordenadas)
+        binding.latitudeInput.setText(args.analise.analiseGeral.latitude)
+        binding.longitudeInput.setText(args.analise.analiseGeral.longitude)
         binding.areaInput.setText(args.analise.analiseGeral.area.toString())
         binding.maquinarioInput.setText(args.analise.analiseGeral.maquinario)
         binding.dataAnaliseInput.setText(args.analise.analiseGeral.data)
@@ -36,7 +37,8 @@ class EditarColetaFragment : Fragment() {
 
         binding.buttonAvancar.setOnClickListener {
             val nome = binding.nomeDaColetaInput.text.toString()
-            val coordenadas = binding.coordenadasInput.text.toString()
+            val latitude = binding.latitudeInput.text.toString()
+            val longitude = binding.longitudeInput.text.toString()
             val dimensoesArea = binding.areaInput.text.toString()
             val maquinario = binding.maquinarioInput.text.toString()
             val dataAnalise = binding.dataAnaliseInput.text.toString()
@@ -45,14 +47,15 @@ class EditarColetaFragment : Fragment() {
 
             if (stringsNaoSaoVazias(
                     nome,
-                    coordenadas,
+                    latitude,
+                    longitude,
                     dimensoesArea,
                     maquinario,
                     dataAnalise,
                     cidade,
                     estado
                 )) {
-                val analiseGeral = AnaliseGeral(nome, coordenadas, dimensoesArea.toInt(), maquinario, dataAnalise, cidade, estado)
+                val analiseGeral = AnaliseGeral(nome, latitude, longitude, dimensoesArea.toInt(), maquinario, dataAnalise, cidade, estado)
 
                 val todosOsDados = Analise(args.analise.id, analiseGeral, args.analise.diametroPeneira, args.analise.areaUmaPeneira,
                     args.analise.areaTodasPeneiras, args.analise.emCimaPeneiraUm, args.analise.emCimaPeneiraDois, args.analise.emCimaPeneiraTres,

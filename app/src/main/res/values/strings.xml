@@ -44,4 +44,8 @@
     <string name="perdas_totais_sacas_ha">Perdas Totais(sacas/ha)</string>
     <string name="perdas_no_sistema_industrial_sacas_ha">Perdas no sistema\nIndustrial (sacas/ha)</string>
     <string name="perdas_na_plataforma_sacas_ha">Perdas na\nplataforma\n(sacas/ha)</string>
+    <string name="latitude">Latitude</string>
+    <string name="longitude">Longitude</string>
+    <string name="latLonHint">-14.604847</string>
+    <string name="lonHint">-46.455807</string>
 </resources>
