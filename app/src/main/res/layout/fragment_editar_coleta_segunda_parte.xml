@@ -360,12 +360,12 @@
             android:importantForAutofill="no" />
 
         <Button
-            android:id="@+id/buttonSalvar"
+            android:id="@+id/buttonAtualizar"
             android:layout_width="110dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
             android:backgroundTint="@color/verde"
-            android:text="@string/salvarNoDB"
+            android:text="@string/atualizarNoDB"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
