@@ -1,166 +1,171 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".fragments.analisar.AnalisarColetaSegundaParteFragment">
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="@string/perdas_totais_kg_ha"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.065"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/perdasTotaisResultTextView"
-        android:layout_width="130dp"
-        android:layout_height="38dp"
-        android:layout_marginTop="8dp"
-        android:background="@color/cinza"
-        android:gravity="center"
-        android:text="@string/exemplosMedidasPeneiras"
-        app:layout_constraintEnd_toEndOf="@+id/textView3"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardView"
+    android:layout_height="wrap_content">
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="210dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/perdasTotaisResultTextView">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginStart="30dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="30dp"
-            android:background="@color/cardViewGraphsBackground"
-            android:gravity="bottom|center"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="30dp"
-                android:text="@string/perdas_no_sistema_industrial_kg_ha" />
-
-            <View
-                android:id="@+id/graficoPerdasSistemaIndustrial"
-                android:layout_width="20dp"
-                android:layout_height="167dp"
-                android:layout_marginStart="10dp"
-                android:background="@color/verde" />
-
-            <View
-                android:id="@+id/graficoPerdasPlataforma"
-                android:layout_width="20dp"
-                android:layout_height="150dp"
-                android:background="@color/ciano" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginBottom="30dp"
-                android:text="@string/perdas_na_plataforma_kg_ha" />
-
-        </LinearLayout>
-
-    </androidx.cardview.widget.CardView>
-
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="@string/perdas_totais_sacas_ha"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.065"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardView" />
+        tools:context=".fragments.analisar.AnalisarColetaSegundaParteFragment">
 
-    <TextView
-        android:id="@+id/perdasTotaisResultSacasTextView"
-        android:layout_width="130dp"
-        android:layout_height="38dp"
-        android:layout_marginTop="8dp"
-        android:background="@color/cinza"
-        android:gravity="center"
-        android:text="@string/exemplosMedidasPeneiras"
-        app:layout_constraintEnd_toEndOf="@+id/textView3"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/perdas_totais_kg_ha"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.065"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardView2"
-        android:layout_width="match_parent"
-        android:layout_height="210dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/perdasTotaisResultSacasTextView">
+        <TextView
+            android:id="@+id/perdasTotaisResultTextView"
+            android:layout_width="130dp"
+            android:layout_height="38dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/cinza"
+            android:gravity="center"
+            android:text="@string/exemplosMedidasPeneiras"
+            app:layout_constraintEnd_toEndOf="@+id/textView3"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
-        <LinearLayout
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginStart="30dp"
+            android:layout_height="210dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/perdasTotaisResultTextView">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="30dp"
+                android:background="@color/cardViewGraphsBackground"
+                android:gravity="bottom|center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="30dp"
+                    android:text="@string/perdas_no_sistema_industrial_kg_ha" />
+
+                <View
+                    android:id="@+id/graficoPerdasSistemaIndustrial"
+                    android:layout_width="20dp"
+                    android:layout_height="167dp"
+                    android:layout_marginStart="10dp"
+                    android:background="@color/verde" />
+
+                <View
+                    android:id="@+id/graficoPerdasPlataforma"
+                    android:layout_width="20dp"
+                    android:layout_height="150dp"
+                    android:background="@color/ciano" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginBottom="30dp"
+                    android:text="@string/perdas_na_plataforma_kg_ha" />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/perdas_totais_sacas_ha"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.065"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cardView" />
+
+        <TextView
+            android:id="@+id/perdasTotaisResultSacasTextView"
+            android:layout_width="130dp"
+            android:layout_height="38dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/cinza"
+            android:gravity="center"
+            android:text="@string/exemplosMedidasPeneiras"
+            app:layout_constraintEnd_toEndOf="@+id/textView3"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView2"
+            android:layout_width="match_parent"
+            android:layout_height="210dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/perdasTotaisResultSacasTextView">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="30dp"
+                android:background="@color/cardViewGraphsBackground"
+                android:gravity="bottom|center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="30dp"
+                    android:text="@string/perdas_no_sistema_industrial_sacas_ha" />
+
+                <View
+                    android:id="@+id/graficoPerdasSistemaIndustrialSacas"
+                    android:layout_width="20dp"
+                    android:layout_height="167dp"
+                    android:layout_marginStart="10dp"
+                    android:background="@color/verde" />
+
+                <View
+                    android:id="@+id/graficoPerdasPlataformaSacas"
+                    android:layout_width="20dp"
+                    android:layout_height="150dp"
+                    android:background="@color/ciano" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginBottom="30dp"
+                    android:text="@string/perdas_na_plataforma_sacas_ha" />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <Button
+            android:id="@+id/buttonPronto"
+            android:layout_width="110dp"
             android:layout_marginTop="10dp"
-            android:layout_marginEnd="30dp"
-            android:background="@color/cardViewGraphsBackground"
-            android:gravity="bottom|center"
-            android:orientation="horizontal">
+            android:layout_height="48dp"
+            android:backgroundTint="@color/verde"
+            android:text="@string/textButtonTerminar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cardView2" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="30dp"
-                android:text="@string/perdas_no_sistema_industrial_sacas_ha" />
-
-            <View
-                android:id="@+id/graficoPerdasSistemaIndustrialSacas"
-                android:layout_width="20dp"
-                android:layout_height="167dp"
-                android:layout_marginStart="10dp"
-                android:background="@color/verde" />
-
-            <View
-                android:id="@+id/graficoPerdasPlataformaSacas"
-                android:layout_width="20dp"
-                android:layout_height="150dp"
-                android:background="@color/ciano" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginBottom="30dp"
-                android:text="@string/perdas_na_plataforma_sacas_ha" />
-
-        </LinearLayout>
-
-    </androidx.cardview.widget.CardView>
-
-    <Button
-        android:id="@+id/buttonPronto"
-        android:layout_width="110dp"
-        android:layout_marginTop="10dp"
-        android:layout_height="48dp"
-        android:backgroundTint="@color/verde"
-        android:text="@string/textButtonTerminar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardView2" />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
