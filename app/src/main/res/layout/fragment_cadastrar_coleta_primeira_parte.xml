@@ -126,7 +126,7 @@
             android:background="@color/cinza"
             android:hint="@string/areaHint"
             android:importantForAutofill="no"
-            android:inputType="text"
+            android:inputType="numberDecimal"
             android:padding="10dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.262"

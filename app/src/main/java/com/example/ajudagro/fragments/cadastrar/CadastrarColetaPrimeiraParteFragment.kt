@@ -9,17 +9,26 @@ import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import com.example.ajudagro.database.models.AnaliseGeral
 import com.example.ajudagro.databinding.FragmentCadastrarColetaPrimeiraParteBinding
+import java.time.LocalDate
+import java.time.format.DateTimeFormatter
 
 class CadastrarColetaPrimeiraParteFragment : Fragment() {
 
     private var _binding:FragmentCadastrarColetaPrimeiraParteBinding? = null
     private val binding get() = _binding!!
 
+    private val data: LocalDate = LocalDate.now()
+    private val formatter: DateTimeFormatter = DateTimeFormatter.ofPattern("dd/MM/yyyy")
+
+    private val dataAtual: String = data.format(formatter)
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentCadastrarColetaPrimeiraParteBinding.inflate(layoutInflater, container, false)
+
+        binding.dataAnaliseInput.setText(dataAtual)
 
         binding.estadoInput.setOnEditorActionListener { _, _, _ -> false }
 

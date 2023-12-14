@@ -1,8 +1,11 @@
 package com.example.ajudagro.fragments.relatorio
 
+import android.Manifest
+import android.content.pm.PackageManager
 import android.graphics.Bitmap
 import android.graphics.Canvas
 import android.graphics.Color
+import android.os.Build
 import android.os.Bundle
 import android.os.Environment
 import android.util.Log
@@ -11,6 +14,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.ViewTreeObserver
 import android.widget.Toast
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.navArgs
 import com.example.ajudagro.databinding.FragmentGerarRelatorioBinding
@@ -29,12 +33,16 @@ import com.itextpdf.text.pdf.PdfWriter
 import java.io.ByteArrayOutputStream
 import java.io.FileOutputStream
 
+@Suppress("DEPRECATION")
 class GerarRelatorioFragment : Fragment() {
 
     private val args by navArgs<GerarRelatorioFragmentArgs>()
 
     private var _binding: FragmentGerarRelatorioBinding? = null
     private val binding get() = _binding!!
+
+    private val permission = Manifest.permission.WRITE_EXTERNAL_STORAGE
+    private val requestCode = 123
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -68,18 +76,77 @@ class GerarRelatorioFragment : Fragment() {
 
         botaoGerarRelatorio.setOnClickListener {
 
-            val grafico = gerarGrafico(pieChart)
-            gerarRelatorio(args.analise.analiseGeral.nome.toString(), perdasPlataforma, perdasPlataforma/60,
-                perdasSistemaIndustrial, perdasSistemaIndustrial/60, grafico)
+            if (Build.VERSION.SDK_INT < Build.VERSION_CODES.Q){
+                if (ContextCompat.checkSelfPermission(
+                        requireContext(),
+                        permission
+                    ) != PackageManager.PERMISSION_GRANTED
+                ) {
+                    // Se a permissão não foi concedida, solicita a permissão
+                    requestPermissions(arrayOf(permission), requestCode)
+                } else {
+                    val grafico = gerarGrafico(pieChart)
+                    gerarRelatorio(args.analise.analiseGeral.nome.toString(), perdasPlataforma, perdasPlataforma/60,
+                        perdasSistemaIndustrial, perdasSistemaIndustrial/60, grafico)
+
+                }
+            }
+            else{
+                val grafico = gerarGrafico(pieChart)
+                gerarRelatorio(args.analise.analiseGeral.nome.toString(), perdasPlataforma, perdasPlataforma/60,
+                    perdasSistemaIndustrial, perdasSistemaIndustrial/60, grafico)
+            }
         }
 
         return binding.root
     }
 
+    @Deprecated("Deprecated in Java")
+    override fun onRequestPermissionsResult(
+        requestCode: Int,
+        permissions: Array<out String>,
+        grantResults: IntArray
+    ) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+
+        val pieChart = binding.pieChart
+
+        val perdasSistemaIndustrial = calcularPerdasSistemaIndustrial(
+            args.analise.embaixoPeneiraUm,
+            args.analise.embaixoPeneiraDois,
+            args.analise.embaixoPeneiraTres,
+            args.analise.embaixoPeneiraQuatro,
+            args.analise.areaTodasPeneiras
+        )
+
+        val perdasPlataforma = calcularPerdasPlataforma(
+            args.analise.emCimaPeneiraUm,
+            args.analise.emCimaPeneiraDois,
+            args.analise.emCimaPeneiraTres,
+            args.analise.emCimaPeneiraQuatro,
+            args.analise.areaTodasPeneiras
+        )
+
+        if (requestCode == 123) {
+            if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                val grafico = gerarGrafico(pieChart)
+                gerarRelatorio(args.analise.analiseGeral.nome.toString(), perdasPlataforma, perdasPlataforma/60,
+                    perdasSistemaIndustrial, perdasSistemaIndustrial/60, grafico)
+            } else {
+
+                Toast.makeText(
+                    requireContext(),
+                    "A permissão para armazenamento é necessária para executar esta ação.",
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
+        }
+    }
+
     private fun gerarGrafico(chart: PieChart) : PieChart {
         val argumentosPerdas = args.analise
 
-        val perdasPlataforma = calcularPerdasPlataforma(
+        var perdasPlataforma = calcularPerdasPlataforma(
             argumentosPerdas.emCimaPeneiraUm,
             argumentosPerdas.emCimaPeneiraDois,
             argumentosPerdas.emCimaPeneiraTres,
@@ -87,7 +154,7 @@ class GerarRelatorioFragment : Fragment() {
             argumentosPerdas.areaTodasPeneiras
         )
 
-        val perdasSistemaIndustrial = calcularPerdasSistemaIndustrial(
+        var perdasSistemaIndustrial = calcularPerdasSistemaIndustrial(
             argumentosPerdas.embaixoPeneiraUm,
             argumentosPerdas.embaixoPeneiraDois,
             argumentosPerdas.embaixoPeneiraTres,
@@ -95,9 +162,14 @@ class GerarRelatorioFragment : Fragment() {
             argumentosPerdas.areaTodasPeneiras
         )
 
+        val perdasTotais = (perdasPlataforma + perdasSistemaIndustrial)
+
+        perdasPlataforma = (perdasPlataforma * 100) / perdasTotais
+        perdasSistemaIndustrial = 100 - perdasPlataforma
+
         val entradas = mutableListOf<PieEntry>()
-        entradas.add(PieEntry(perdasPlataforma, "Perdas plataforma"))
-        entradas.add(PieEntry(perdasSistemaIndustrial, "Perdas sistema industrial"))
+        entradas.add(PieEntry(perdasPlataforma, "Perdas plataforma (%)"))
+        entradas.add(PieEntry(perdasSistemaIndustrial, "Perdas sistema industrial(%)"))
 
         val dataSet = PieDataSet(entradas, "")
         dataSet.colors = mutableListOf(Color.CYAN, Color.RED)
