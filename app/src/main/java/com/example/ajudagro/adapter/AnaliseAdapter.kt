@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.app.AlertDialog
 import android.content.Context
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
@@ -39,12 +40,14 @@ class AnaliseAdapter(private val analiseViewModel: AnaliseViewModel, private val
             }
         }
         if (args.estado == "analisar"){
+            holder.deletarAnaliseButton.visibility = View.INVISIBLE
             holder.itemView.rootView.setOnClickListener {
                 val action = SelecionarAnaliseFragmentDirections.actionSelecionarAnaliseFragmentToAnalisarColetaFragment(analise = analiseAtual)
                 holder.itemView.findNavController().navigate(action)
             }
         }
         if (args.estado == "gerar relatorio"){
+            holder.deletarAnaliseButton.visibility = View.INVISIBLE
             holder.itemView.rootView.setOnClickListener {
                 val action = SelecionarAnaliseFragmentDirections.actionSelecionarAnaliseFragmentToGerarRelatorioFragment(analise = analiseAtual)
                 holder.itemView.findNavController().navigate(action)
